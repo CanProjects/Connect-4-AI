@@ -20,14 +20,16 @@ To make the AI think shorter/longer you can go into CNNPlayWithSearch.py > heuri
 
 Open connect4.py, in connect4 > Step > find actionR variable and change it to actionR = monte(self.getState(),4000). You can change 4000 to any number to increase or decrease the strength of the monte carlo tree search player.
 
-#How to train your own network
+# How to train your own network
 
-You need to first generate games. MonteGameGen.py creates games in a multiprocessing way. Currently the game generation is commented out. Uncomment the game generation part, and comment everything after. Generating games should take a long time and should make many files. You can stop the program at any time when you think theres enough games. These games are generated using just monteSearch of depth 1000, which you can change by scrolling up in MonteGameGen.py and changing the number from 1000 to something smaller if you want it to run faster. As a rule of thumb, you want about 200mb of data generated total. Sort these files into draws, wins and losses, then merge the CSV files into files called 0.csv , 1.csv and neg1.csv. Go to the end of 0.csv, 1.csv and neg1.csv and delete the last row which should contain an empty array (I think this is a bug as a result of multiprocessing). Uncomment the second half of MonteGameGen.py and comment the first part that you just ran. This should create a file called final.csv which contains a large dataset of positions and their results. Now open the file Connect4CnnModel.py. This file should take a while to run as it deals with opening large files. Once your model is trained, you're good to go with running CNNPlayWithSearch.py 
+You need to first generate games. MonteGameGen.py creates games in a multiprocessing way. Currently the game generation is commented out. Uncomment the game generation part, and comment everything after. Generating games should take a long time and should make many files. You can stop the program at any time when you think theres enough games. These games are generated using just monteSearch of depth 1000, which you can change by scrolling up in MonteGameGen.py and changing the number from 1000 to something smaller if you want it to run faster. As a rule of thumb, you want about 200mb of data generated total. Sort these files into draws, wins and losses, then merge the CSV files into files called 0.csv , 1.csv and neg1.csv. Go to the end of 0.csv, 1.csv and neg1.csv and delete the last row which should contain an empty array (I think this is a bug as a result of multiprocessing). 
 
-#Pure Monte Gameplay
+Uncomment the second half of MonteGameGen.py and comment the first part that you just ran. This should create a file called final.csv which contains a large dataset of positions and their results. Now open the file Connect4CnnModel.py. This file should take a while to run as it deals with opening large files. Once your model is trained, you're good to go with running CNNPlayWithSearch.py 
+
+# Pure Monte Gameplay
 
 newMonte.py is an opponent using just monte carlo tree search, which is also interesting and can be played against. You're welcome to experiment with it.
 
-#How you can contribute:
+# How you can contribute:
 
 The code is far from clean, so if you would like to clean it / refactor that would be appreciated. Some fixes involve making it easier to vary the strength of your opponent and the type of your opponent (Monte, AI, human). A clickable version of the pygame window would also be lovely. Making the AI play second shouldnt be hard to fix, so thats a project for an enthusiast. Im happy to answer any questions anyone has, so feel free to contact me through github. If you run the code and theres any bugs which you had to fix, i can try fix it as well if you let me know. 
