@@ -14,6 +14,8 @@ Once the AI can sense if a position is good or bad, in a real game we show the A
 
 # How to play against it yourself
 
+Install all prerequisites in the requirements.txt. Python 3.8 was used (I believe).
+
 Open CNNPlayWithSearch.py, run the program. The AI as it is currently built can only play first, but I believe also making it play second could actually be a very easy change. Type in your move when prompted (0 for first row, 6 for last row). 
 
 To make the AI think shorter/longer you can go into CNNPlayWithSearch.py > heuristics > treeGen and then change counterL < whatever amount of positions you want the AI to see. The AI will increase amount of positions seen in powers of 7, so be careful with selection of large numbers.
