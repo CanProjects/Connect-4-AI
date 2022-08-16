@@ -335,9 +335,6 @@ def heuristics(state,colour):
                 bestMoveTuple = (tree.get_node(node).tag ,tree.get_node(node).identifier)
                 x = tree.get_node(node).data.reshape(1,6,7)
                 x = tf.expand_dims(x, axis=-1)
-                print(tree.get_node(node).tag)
-                print(model.predict(x))
-                print()
         
         # tree.show( idhidden=False, line_type='ascii-emh')
         print('Eval is:', round(bestMoveTuple[0],2), "Best move is:", str(bestMoveTuple[1])[1])
