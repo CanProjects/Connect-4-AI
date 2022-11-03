@@ -1,8 +1,10 @@
 # Connect 4
-![alt text](https://github.com/CanProjects/Connect-4-AI/blob/main/ezgif.com-gif-maker%20(1).gif "Logo Title Text 1")
-
 
 A very strong machine learning based approach to Connect4, incorporating no prior game knowledge. Inspired by deepmind's alphazero. The implementation combines multiple different approaches to game solving, including min-maxing, monte carlo tree search, and machine learning (using a convolutional neural network) to classify/evaluate the strength of positions. 
+
+
+https://user-images.githubusercontent.com/110444153/199854549-c7e782f9-0825-431c-bc1b-f735d6fe4bc4.mp4
+
 
 # How it works:
 
